@@ -1,0 +1,15 @@
+.myButton {
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color:rgba(255, 255, 255, 0.733);
+  transition: ease-in-out 0.5s;
+  color: #000;
+}
+
+.myButton:hover {
+  transform: scale(1.10);
+  background-color: rgba(245, 43, 137, 0.644);
+  color: #fff;
+}
