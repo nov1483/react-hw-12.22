@@ -1,0 +1,30 @@
+.areaContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.areaContainer label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.myTextArea {
+  padding: 5px;
+  resize: none;
+  margin-bottom: 15px;
+  background:transparent;
+  transition: ease-in-out 0.5s;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  border-bottom: 1px solid #fff ;
+  border-top: 1px solid rgba(255, 255, 255, 0.158);
+  border-right: 1px solid rgba(255, 255, 255, 0.596) ;
+}
+
+.myTextArea::placeholder {
+  text-align: center;
+}
+
+.myTextArea:focus {
+  box-shadow: 0px 0px 29px 5px rgba(255, 255, 255, 0.301);
+}
