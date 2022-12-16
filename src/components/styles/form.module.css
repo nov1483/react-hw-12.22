@@ -9,12 +9,20 @@
   
 }
 
-h1 {
+
+.titleActive {
+  display: block;
   margin-bottom: 40px;
   letter-spacing: 3px;
 }
 
-form {
+.titleDisabled {
+  display: none;
+}
+
+.formActive {
+  display: block;
+  transition: ease-in-out 1s;
   width: 50%;
   padding: 50px;
   margin-bottom: 40px;
@@ -23,7 +31,20 @@ form {
   background-color: rgb(58, 53, 53);
 }
 
+.formDisabled {
+  display: none;
+}
+
 .btnWrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.errMsg {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.lengthHandler {
+  margin-bottom: 10px;
 }

@@ -13,3 +13,8 @@
   background-color: rgba(245, 43, 137, 0.644);
   color: #fff;
 }
+
+.myButton:disabled {
+  background-color: rgb(109, 92, 92);
+  color: rgb(148, 138, 138);
+}

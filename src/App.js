@@ -1,13 +1,11 @@
 import React from "react";
 import classes from './App.module.css';
-import MyForm from "./components/UI/MyForm";
+import Form from "./components/UI/Form";
 
 class App extends React.Component { 
   render() {
     return(
-      <>
-        <MyForm/>
-      </>
+        <Form/>
     )
   }
 }
