@@ -37,21 +37,33 @@ class Form extends React.Component {
     this.state = { ...DEFAULT_STATE };
   }
   inputHandler(e) {
+    if (
+      !this.state.nameFlag &&
+      !this.state.lastNameFlag &&
+      !this.state.phoneFlag &&
+      !this.state.siteFlag &&
+      !this.state.aboutAreaFlag &&
+      !this.state.stackAreaFlag &&
+      !this.state.projectAreaFlag
+    ) {
+      this.setState({ formInvalid: false });
+    }
     switch (e.target.name) {
       case "name":
         this.setState({ nameValue: e.target.value });
         if (e.target.value === "" || !/[A-Z]/.test(e.target.value[0])) {
           this.setState({ nameFlag: true, formInvalid: true });
         } else {
-          this.setState({ nameFlag: false, formInvalid: false });
+          this.setState({ nameFlag: false });
         }
+
         break;
       case "lastName":
         this.setState({ lastNameValue: e.target.value });
         if (e.target.value === "" || !/[A-Z]/.test(e.target.value[0])) {
           this.setState({ lastNameFlag: true, formInvalid: true });
         } else {
-          this.setState({ lastNameFlag: false, formInvalid: false });
+          this.setState({ lastNameFlag: false });
         }
         break;
       case "phone":
@@ -62,6 +74,7 @@ class Form extends React.Component {
           .slice(1, 5)
           .filter((i) => i !== "")
           .join("-");
+
         this.setState({ phoneValue: value });
         if (
           e.target.value === "" ||
@@ -71,15 +84,16 @@ class Form extends React.Component {
         ) {
           this.setState({ phoneFlag: true, formInvalid: true });
         } else {
-          this.setState({ phoneFlag: false, formInvalid: false });
+          this.setState({ phoneFlag: false });
         }
+
         break;
       case "site":
         this.setState({ siteValue: e.target.value });
         if (e.target.value === "" || !/^https?\:\/\//.test(e.target.value)) {
           this.setState({ siteFlag: true, formInvalid: true });
         } else {
-          this.setState({ siteFlag: false, formInvalid: false });
+          this.setState({ siteFlag: false });
         }
         break;
       case "about":
@@ -87,7 +101,7 @@ class Form extends React.Component {
         if (e.target.value.length >= 351 || e.target.value === "") {
           this.setState({ aboutAreaFlag: true, formInvalid: true });
         } else {
-          this.setState({ aboutAreaFlag: false, formInvalid: false });
+          this.setState({ aboutAreaFlag: false });
         }
         break;
       case "stack":
@@ -95,7 +109,7 @@ class Form extends React.Component {
         if (e.target.value.length > 350 || e.target.value === "") {
           this.setState({ stackAreaFlag: true, formInvalid: true });
         } else {
-          this.setState({ stackAreaFlag: false, formInvalid: false });
+          this.setState({ stackAreaFlag: false });
         }
         break;
       case "project":
@@ -103,7 +117,7 @@ class Form extends React.Component {
         if (e.target.value.length > 350 || e.target.value === "") {
           this.setState({ projectAreaFlag: true, formInvalid: true });
         } else {
-          this.setState({ projectAreaFlag: false, formInvalid: false });
+          this.setState({ projectAreaFlag: false });
         }
         break;
       default:
